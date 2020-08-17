@@ -1,5 +1,6 @@
 $(document).ready(function () {
   $("#formOne").submit(function (event) {
+    event.preventDefault();
     const person1Input = $("input#person1").val();
     const person2Input = $("input#person2").val();
     const animalInput = $("input#animal").val();
@@ -7,6 +8,14 @@ $(document).ready(function () {
     const verbInput = $("input#verb").val();
     const nounInput = $("input#noun").val();
     const adjectiveInput = $("input#adjective").val();
+
+    let valArr = [person1Input, person2Input, animalInput, exclamationInput, verbInput, nounInput, adjectiveInput]
+    let elementName = [person1, person2, animal, exclamation, verb, noun, adjective]
+
+    elementName.forEach(function (word) {
+      $("elementName").replaceWith("valArr")
+
+    });
 
     $(".person1").text(person1Input);
     $(".person2").text(person2Input);
@@ -19,6 +28,6 @@ $(document).ready(function () {
 
     $("#story").show();
 
-    event.preventDefault();
+
   });
 });
